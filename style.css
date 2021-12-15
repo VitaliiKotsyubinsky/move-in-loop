@@ -1,3 +1,5 @@
+body {}
+
 #actor {
     --size: 50px;
     width: var(--size);

@@ -15,11 +15,20 @@ async function main() {
 }
 
 async function gameLoop() {
-    if (actor.x < innerWidth / 2) {
+    if (actor.x < innerWidth - actor.size * 2
+        && actor.y < actor.size) {
         await moveRight()
-    } else {
+
+    } else if (actor.y < innerHeight - actor.size * 2
+        && actor.x > innerWidth / 2) {
         await moveDown()
+    } else if (actor.x > 0) {
+        await moveLeft()
     }
+    else {
+        await moveUp()
+    }
+
 
 }
 
@@ -30,6 +39,16 @@ async function moveRight() {
 }
 async function moveDown() {
     actor.y += actor.size
+    render()
+    await sleep(.1)
+}
+async function moveLeft() {
+    actor.x -= actor.size
+    render()
+    await sleep(0.1)
+}
+async function moveUp() {
+    actor.y -= actor.size
     render()
     await sleep(.1)
 }
