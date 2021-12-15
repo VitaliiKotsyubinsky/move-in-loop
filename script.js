@@ -26,12 +26,12 @@ async function gameLoop() {
 async function moveRight() {
     actor.x += actor.size
     render()
-    await sleep(1)
+    await sleep(0.1)
 }
 async function moveDown() {
     actor.y += actor.size
     render()
-    await sleep(1)
+    await sleep(.1)
 }
 
 

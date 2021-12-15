@@ -8,7 +8,7 @@
     top: 0;
     transform-origin: calc(var(--size) / 2) var(--size);
     animation: bob 1s infinite;
-    transition: 1s linear;
+    transition: .1s linear;
 }
 
 @keyframes bob {
